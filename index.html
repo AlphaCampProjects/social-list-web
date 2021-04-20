@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+        rel="stylesheet"
+      />
+      <title>User List</title>
+    </head>
+
+    <body>
+      <!-- Navbar -->
+      <nav class="navbar sticky-top navbar-expand-lg navbar-dark px-5">
+        <a class="navbar-brand" href="./index.html">Friends List</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./favorite.html">Favorite</a>
+            </li>
+          </ul>
+          <!-- Search Bar -->
+          <form class="form-inline" id="search-form">
+            <label class="sr-only" for="inlineFormInputName2"
+              >Search Keyword</label
+            >
+            <input
+              type="text"
+              class="form-control mb-2 mr-sm-2"
+              id="search-input"
+              placeholder="Find a Name..."
+            />
+            <button type="submit" class="btn mb-2" id="search-submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+      <!-- display user list -->
+      <div class="container mt-5 main-session">
+        <!-- random one user -->
+        <div class="row justify-content-center" id="randomPerson">
+          <div class="lucky-card mb-3 px-3 pt-3">
+            <div class="row mx-auto">
+              <h4 class="card-title text-center" id="lucky-name">
+                Click, and find your lucky star！
+              </h4>
+            </div>
+            <div class="row">
+              <div class="col-md-4 ms-3 pt-3" id="lucky-avatar">
+                <!-- <img src="..." alt="?" /> -->
+              </div>
+              <div class="col-md-7 ms-3">
+                <div class="card-body">
+                  <div class="card-text ml-2" id="lucky-content"></div>
+                </div>
+              </div>
+            </div>
+            <!-- button area-->
+            <div class="row mb-3 justify-content-center" id="lucky-button">
+              <button
+                class="btn btn-outline-danger btn-lucky-star"
+                data-id="${item.id}"
+              >
+                Lucky star
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--Display all the users-->
+        <div class="row justify-content-center" id="data-panel">
+          <!--  data-Panel created by JS -->
+        </div>
+      </div>
+
+      <!-- pagination -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-3" id="paginator"></ul>
+        <!--  pagination created by JS -->
+      </nav>
+
+      <!--   modal -->
+      <div
+        class="modal fade"
+        id="user-modal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="user-modal-title">User Name</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-4" id="user-avatar">
+                  <img src="" alt="" />
+                </div>
+                <div class="col-8">
+                  <ul>
+                    <li id="user-gender">Gender：</li>
+                    <li id="user-birth">Birthday：</li>
+                    <li id="user-age">Age：</li>
+                    <li id="user-region">Region：</li>
+                    <li id="user-email">E-Mail：</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="./index.js"></script>
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"
+      ></script>
+    </body>
+  </html>
+</html>

@@ -1,0 +1,60 @@
+body .navbar {
+  background-color: #ffb1b4;
+}
+.navbar-brand,
+.nav-link {
+  font-weight: bold;
+  font-family: "Varela Round", sans-serif;
+}
+.navbar-brand {
+  font-size: 24px;
+}
+.card-img-modal {
+  border-radius: 50%;
+}
+.card-body {
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.card-img-lucky {
+  border-radius: 20%;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  box-shadow: 3px 1px 5px gray;
+  background-color: #fadcda;
+  min-width: 200px;
+}
+.lucky-card {
+  box-shadow: 3px 1px 5px gray;
+  background-color: #fadcda;
+  border-radius: 1%;
+}
+
+h4 {
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  color: #ff5649;
+}
+
+.addLove {
+  background-color: #dc3545;
+  color: white;
+}
+
+#search-submit {
+  background-color: cadetblue;
+  color: snow;
+}
+
+.modal-content {
+  background-color: #f29e93;
+}
+
+.btn-show-user-info {
+  background-color: #1bd1a5;
+  color: snow;
+}
